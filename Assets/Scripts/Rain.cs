@@ -21,7 +21,7 @@ public class Rain : MonoBehaviour
     {
         //collision에는 충돌하는 물체의 정보가 들어있다.
         //즉, Rain이 Ground에 부딪히면 부딪힌 Ground 관련된 게임 오브젝트 정보들이 들어있다
-        if(collision.gameObject.name=="Ground")
+        if(collision.gameObject.CompareTag("Ground"))
         {
             //gameObject는 Rain스크립트가 붙어있는 오브젝트(Rain)자체를 가리킴
             Destroy(gameObject);
