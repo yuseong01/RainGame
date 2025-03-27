@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject rain;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //"함수의 이름", 몇 초 이후에 생성할래?, 얼마나 자주 생성할래?(주기)
+        InvokeRepeating("MakeRain", 0f, 1f); //MakeRain함수, 바로생성, 1초마다 한번씩 생성
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void MakeRain()
+    {
+        //생성함수 - 생성하고 싶은 붕어빵 틀, 즉 프리팹을 넣어주면 됨 
+        Instantiate(rain);
     }
 }
