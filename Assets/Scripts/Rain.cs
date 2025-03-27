@@ -44,7 +44,6 @@ public class Rain : MonoBehaviour
             size = 1.2f;
             score = 3;
             renderer.color = new Color(150 / 255f, 150 / 255f, 1f, 1f);
-
         }
 
         transform.localScale = new Vector3(size, size, 0);
