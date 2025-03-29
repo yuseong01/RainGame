@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject rain;
+
+    public Text totalScoretxt;
+
     int totalScore;
 
     private void Awake()
@@ -36,5 +40,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         totalScore += score;
+        //숫자를 문자열로 toString()
+        totalScoretxt.text = totalScore.ToString();
     }
 }
