@@ -29,8 +29,6 @@ public class Rain : MonoBehaviour
         {
             size = 0.8f;
             score = 1;
-            //Color값은 float값이 들어감
-            //150을 넣고 싶다면 150/255f 값을 넣어야함
             renderer.color = new Color(100 / 255f, 100 / 255f, 1f, 1f);
         }
         else if (type == 2)
@@ -63,6 +61,12 @@ public class Rain : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             //gameObject는 Rain스크립트가 붙어있는 오브젝트(Rain)자체를 가리킴
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.Instance.AddScore(score);
             Destroy(gameObject);
         }
     }

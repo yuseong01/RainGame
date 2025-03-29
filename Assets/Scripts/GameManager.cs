@@ -1,10 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     public GameObject rain;
+
+    public Text totalScoretxt;
+
+    int totalScore;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +34,13 @@ public class GameManager : MonoBehaviour
     {
         //생성함수 - 생성하고 싶은 붕어빵 틀, 즉 프리팹을 넣어주면 됨 
         Instantiate(rain);
+    }
+
+    //캐릭터와 빗물이 맞았을 때 호출
+    public void AddScore(int score)
+    {
+        totalScore += score;
+        //숫자를 문자열로 toString()
+        totalScoretxt.text = totalScore.ToString();
     }
 }
