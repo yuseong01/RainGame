@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     int totalScore;
 
+    float totalTime=30.0f;
+
     private void Awake()
     {
         Instance = this;
@@ -27,7 +29,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //deltaTime은 시간을 프레임대비로 맞춰준 값
+        totalTime -= Time.deltaTime;
+        Debug.Log(totalTime);
     }
 
     void MakeRain()
