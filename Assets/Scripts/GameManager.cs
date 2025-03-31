@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         //deltaTime은 시간을 프레임대비로 맞춰준 값
         totalTime -= Time.deltaTime;
-        timeTxt.text = totalTime.ToString();
+        timeTxt.text = totalTime.ToString("N2");
     }
 
     void MakeRain()
