@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class RetryButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Retry()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //MainScene을 불러오기 위해 SceneManager사용
+        //"MainScene"이라는 이름의 Scene을 로드해줘라
+        SceneManager.LoadScene("MainScene");
     }
 }
