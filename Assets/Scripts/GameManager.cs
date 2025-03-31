@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject rain;
 
     public Text totalScoretxt;
+    //타이머 값을 넣어주기 위한 text컴포넌트 생성
+    public Text timeTxt;
 
     int totalScore;
 
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         //deltaTime은 시간을 프레임대비로 맞춰준 값
         totalTime -= Time.deltaTime;
-        Debug.Log(totalTime);
+        timeTxt.text = totalTime.ToString();
     }
 
     void MakeRain()
