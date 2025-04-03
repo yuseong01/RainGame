@@ -23,7 +23,7 @@ public class Rain : MonoBehaviour
         transform.position = new Vector3(x, y, 0);
 
         //정수값을 넣어주면 정수만 추출됨(최댓값은 포함이 되지않음)
-        int type = Random.Range(1, 4);
+        int type = Random.Range(1, 5);
 
         if(type==1)
         {
@@ -42,6 +42,12 @@ public class Rain : MonoBehaviour
             size = 1.2f;
             score = 3;
             renderer.color = new Color(150 / 255f, 150 / 255f, 1f, 1f);
+        }
+        else //빨간빗방울
+        {
+            size = 0.8f;
+            score = -5;
+            renderer.color = new Color(1f, 100f / 255f, 100f / 255f, 1f);
         }
 
         transform.localScale = new Vector3(size, size, 0);

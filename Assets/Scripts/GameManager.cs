@@ -7,14 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject rain;
+    public GameObject endPanel;
 
     public Text totalScoretxt;
-
+    //타이머 값을 넣어주기 위한 text컴포넌트 생성
+    public Text timeTxt;
     int totalScore;
+
+    float totalTime=30.0f;
 
     private void Awake()
     {
         Instance = this;
+        Time.timeScale = 1.0f;
     }
 
     // Start is called before the first frame update
@@ -27,7 +32,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (totalTime > 0)
+        {
+            totalTime -= Time.deltaTime;
+        }
+        else
+        {
+            totalTime = 0f;
+            //totaltime이 0이되었을때 endPanel활성화(켜줌)
+            endPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        timeTxt.text = totalTime.ToString("N2");
     }
 
     void MakeRain()
